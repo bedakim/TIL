@@ -103,6 +103,29 @@ return arr3 + '@' + mail;
 
 hideId('ksh@fastcampus.co.kr') // 반환값: '***@fastcampus.co.kr'
 
+
+```js
+    
+const emailToStar = (input) => {
+  let memory = ''
+  let seen = ''
+  for(i=0; i<input.length; i++){
+    seen += input[i]
+    if(seen.includes('@')){
+      memory += input[i]
+    }else{
+      memory +='*'
+    }
+  }
+  return memory
+}
+
+emailToStar('stoneaxe001@naver.com')
+///
+
+
+```
+
 # 문제 7
 
 숫자로만 이루어진 문자열을 입력받아, 연속된 두 짝수 사이에 하이픈(-)을 끼워넣은 문자열을 반환하는 함수(insertHyphen)를 작성하세요.

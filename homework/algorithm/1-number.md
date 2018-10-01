@@ -225,6 +225,32 @@ for (let i = 0; i < 100; i++){
   }
 
   starRepeat(5);
+///
+   function starRepeat(x){
+ 
+    for (let i = 0; i < x; i++){
+      console.log(' *'.repeat(i+1));
+    }
+  }
+
+  starRepeat(5);
+```
+
+```js
+  
+  function print(height){
+    for ( let i = 0; i < height; i++){
+      let stars = ''
+      for(let j = 0; j < i + 1; j++){
+        stars += ' *'
+        
+      }
+      console.log(stars)
+    }
+  }
+
+  print(3)
+
 ```
 
 1을 입력받은 경우:
@@ -262,13 +288,29 @@ for (let i = 0; i < 100; i++){
     }
     else{
       console.log(blank.repeat(i - x) + star.repeat(2*x - i));
-    }
-    
+    } 
   }
+}
+diamond(10)
+```
 
+```js
+  function diamond(x) {
+  for (let i = 0; i < x; i++){
+    const n = i + 1;
+    ' '.repeat(x - n) + '* '.repeat(n)
+    const line = ' '.repeat(x - n) + '* '.repeat(n)
+    console.log(line)
+  } // 루프 반대로 돌기 
+  for (let i = x -2 ; i >= 0; i--){
+    const n = i + 1;
+    ' '.repeat(x - n) + '* '.repeat(n)
+    const line = ' '.repeat(x - n) + '* '.repeat(n)
+    console.log(line)
+  }
 }
 
-diamond(10)
+diamond(5);
 ```
 
 1를 입력받은 경우:

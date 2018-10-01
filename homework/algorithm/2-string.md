@@ -87,6 +87,42 @@ countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
 
 문자열을 입력받아 그 문자열이 회문(palindrome)인지 판별하는 함수를 작성하세요. (회문이란, '토마토', 'never odd or even'과 같이 뒤에서부터 읽어도 똑같이 읽히는 문자열을 말합니다.)
 
+```js
+  const isPalindrome = (input) => {
+  const arr = input
+  const n = input.length
+  for (let i = 0; i < n; i++)
+    if (arr[i] === arr[input.length - i - 1]) {
+    }
+    else {
+      return false
+    }
+  return true
+}
+
+isPalindrome('토마토마토')
+///
+const isPalindrome = (input) => {
+
+  for (let i = 0; i < input.length; i++) {
+    const left = i;
+    const right = input.length - i - 1
+    if (input[left] !== input[right]) {
+      return false
+    }
+    }
+    return true
+  }
+
+isPalindrome('토마토마토')
+///
+
+
+```
+
+
+
+
 ### 문제 6
 
 문자열을 입력받아, 그 문자열의 모든 '부분 문자열'로 이루어진 배열을 반환하는 함수를 작성하세요.
@@ -107,12 +143,54 @@ removeDuplicates('tomato'); -> 'toma'
 removeDuplicates('bartender'); -> 'bartend'
 ```
 
+```js
+  function removeDuplicates(x){
+ let str= ''
+ for (let i=0; i< x.length; i++){
+  //  보지않았을때
+   if(!str.includes(x[i])){
+     str += x[i]
+   }
+   
+ }
+  return str
+}
+removeDuplicates('tomato')
+```
+
 ### 문제 8
 
 이메일 주소를 입력받아, 아이디 부분을 별표(`*`)로 가린 새 문자열을 반환하는 함수를 작성하세요.
 
 - 루프로 먼저 풀어보세요.
 - `split` 메소드를 이용해서 풀어보세요.
+
+
+```js
+  const removeId = (input) => {
+  let seen = false
+  let memory = ''
+  for (let i = 0; i < input.length; i++) {
+    // 내가 지금 보고 있는 글자가 '@' 이면
+    if (input[i] === '@') {
+      // seen의 값을 true로 바꾼다.
+      seen = true
+    }
+    // seen이 true이면
+    if (seen) {
+      // 내가 지금 보고 있는 글자를 그대로 memory에 덧붙인다.
+      memory += input[i]  
+    } else {
+      // 아니면, 별표를 대신 덧붙인다.
+      memory += '*'
+    }
+  }
+  // 변환한 결과를 반환한다.
+  return memory
+}
+
+removeId('sfdsf@naver.com')
+```
 
 ### 문제 9
 
