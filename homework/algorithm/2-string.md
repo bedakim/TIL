@@ -82,6 +82,23 @@ count('apple')
 ```
 countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
 ```
+```js
+  function countChar(input) {
+  const obj = {}
+  for (let i = 0; i < input.length; i++) {
+    const char = input[i]
+    // 글자를 본적이 없다면 "글자": 1 을 적어준다.
+    if ( !(char in obj) ) {
+      obj[char] = 1
+    } else {
+      // 글자를 본적이 있다면 개수를 1 증가시켜준다.
+      obj[char]++
+    }
+  }
+  return obj
+}
+```
+
 
 ### 문제 5
 
@@ -156,6 +173,33 @@ removeDuplicates('bartender'); -> 'bartend'
   return str
 }
 removeDuplicates('tomato')
+
+///
+const removeId = (input) => {
+  let seen = false
+  let memory = ''
+  for (let i = 0; i < input.length; i++) {
+    // 내가 지금 보고 있는 글자가 '@' 이면
+    if (input[i] === '@') {
+      // seen의 값을 true로 바꾼다.
+      seen = true
+    }
+    // seen이 true이면
+    if (seen) {
+      // 내가 지금 보고 있는 글자를 그대로 memory에 덧붙인다.
+      memory += input[i]  
+    } else {
+      // 아니면, 별표를 대신 덧붙인다.
+      memory += '*'
+    }
+  }
+  // 변환한 결과를 반환한다.
+  return memory
+}
+
+removeId('sfdsf@naver.com')
+
+
 ```
 
 ### 문제 8
@@ -196,23 +240,119 @@ removeId('sfdsf@naver.com')
 
 문자열을 입력받아, 대문자는 소문자로, 소문자는 대문자로 바꾼 결과를 반환하는 함수를 작성하세요.
 
+
+```js
+  
+function change(x){
+  let str = '';
+  for (let i =0; i < x.length; i++){
+    if(x[i].toLowerCase()===x[i]){
+      str += x[i].toUpperCase();
+    }else{
+      str += x[i].toLowerCase();
+    }
+  }
+  return str;
+}
+change('dsdjdAADKdkj')
+
+///
+```
+
+
 ### 문제 10
 
 문자열을 입력받아, 각 단어의 첫 글자를 대문자로 바꾼 결과를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+```js
+
+function changedCap(x){
+  let str = '';
+  for (let i = 0; i < x.length; i++){
+    // 첫글자 를 봤을때
+    if(i===0 || x[i-1] === ' '){
+      str += x[i].toUpperCase();
+    }
+    // 내앞이 공백일때
+    else {
+      str += x[i]
+    }
+  }
+  return str
+}
+changedCap('i am hungry')
+/// 
+
+```
+
 
 ### 문제 11
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
 
+```js
+ 
+function longestWord(x) {
+
+  const str = x.split(" ");
+
+  const strr = str.reduce((a, b) => {
+    if(b.length > a.length) {
+      return b
+    } 
+    else {
+      return a
+    }
+  })
+  return strr
+}
+longestWord("And if you gaze long into an abyss");
+```
+
+
+
+
 ### 문제 12
 
 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
+
+```js
+
+function print(s, n){
+  let str = '';
+  for(let i = 0; i < n && i < s.length; i++){
+    str += s[i];
+  }
+  return str;
+}
+
+print('hello','3');
+```
+
 
 ### 문제 13
 
 Camel case의 문자열을 입력받아, snake case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 
-### 문제 14
+```js
+function changedCap(x){
+  let str = '';
+  for (let i = 0; i < x.length; i++){
+    // 첫글자 를 봤을때
+    if(x[i].toLowerCase() === x[i] ){
+     str += x[i]
+    }
+    else {
+      
+       str += '_' + x[i].toLowerCase();
+    }
+  }
+  return str
+}
+changedCap('backGround')
+```
+
+<!-- ### 문제 14 -->
 
 Snake case의 문자열을 입력받아, camel case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 
@@ -226,6 +366,27 @@ split('Hello World'); -> ['Hello World']
 split('Hello World', ' '); -> ['Hello', 'World']
 split('let,const,var', ',') -> ['let', 'const', 'var']
 ```
+
+```js 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 문제 16
 
