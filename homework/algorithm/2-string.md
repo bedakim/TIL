@@ -307,6 +307,29 @@ function longestWord(x) {
   return strr
 }
 longestWord("And if you gaze long into an abyss");
+
+///
+function longestWord(input){
+  let longest ='' //지금껏 봤던 단어중 가장 긴단어
+  let current = ''// 내가 보고 있느 단어
+
+  for ( let  i = 0; i < input.length; i++){
+    //내가 보고있는게 공백이 아니면
+    if(input[i] !== ' '){
+      current += input[i]
+      if(current.length > longest.length){
+        longest = current
+      }
+    }
+    //보다가 공백이면
+    else{
+      current = ''
+    }
+  }
+  return longest
+}
+
+longestWord("And if you gazeeee long into an abyss");
 ```
 
 
@@ -327,6 +350,25 @@ function print(s, n){
 }
 
 print('hello','3');
+//
+function print(s, n){
+  if( s.length < n ){
+    return s
+  }
+ let str = ''
+ for(let i = 0; i < s.length; i++){
+   str += s [i]
+   if(str.length === n){
+     return str
+   }
+   else{
+
+   }
+
+ }
+ return str
+}
+print('hello',8);
 ```
 
 
@@ -350,6 +392,23 @@ function changedCap(x){
   return str
 }
 changedCap('backGround')
+// 
+
+function toSnakeCase(input){
+  // 한글자씩 보면서 첫글자 가 아닌 대문자를 만났을때 바로 앞에 밒줄을 쳐줌
+
+  let str  = ''
+  for( let i =0; i < input.length; i++){
+    //만약 첫글자가 아닌 대문자 를 만났을 경우
+    if(i !==0 && (input[i].toUpperCase() === input[i])) {
+      str += '_'
+    }
+    str += input[i].toLowerCase()
+  }
+  return str
+
+}
+toSnakeCase('fjdkskdfHafkfwfl')
 ```
 
 <!-- ### 문제 14 -->
@@ -370,21 +429,6 @@ split('let,const,var', ',') -> ['let', 'const', 'var']
 ```js 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
