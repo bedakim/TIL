@@ -45,6 +45,20 @@ ceilBy5(37); -> 40
 
 배열을 입력받아, 요소들의 순서를 뒤섞은 새 배열을 반환하는 함수를 작성하세요.
 
+```js
+
+function shuffle(input){
+  const newArr = []
+
+  
+
+
+  return newArr
+}
+
+shuffle([1,2,3,4,5])
+
+```
 
 ### 문제 5
 
@@ -64,7 +78,18 @@ function random(){
 }
 random();
 ```
+```js
+//rgb 코드
+function random(){
+  const r = Math.floor(Math.random()*256)
+  const g = Math.floor(Math.random()*256)
+  const b = Math.floor(Math.random()*256)
 
+  return `rgb(${r},${g},${b})`
+
+}
+random()
+```
 
 
 ### 문제 6
@@ -83,6 +108,20 @@ function print(n){
 }
 
 print(5);
+
+```
+
+```js
+//유니코드
+function random(n){
+  let result  = ''
+  for(let i = 0; i < n; i++){
+    result += String.fromCodepoint(Math.floor(Math.random()* 65536))
+  }
+  return result
+}
+random(5)
+
 ```
 
 
