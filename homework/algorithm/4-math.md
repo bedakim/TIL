@@ -49,10 +49,10 @@ ceilBy5(37); -> 40
 
 function shuffle(input){
   const newArr = []
-
-  
-
-
+  const length = input.length
+  for ( let i = 0; i < length; i++){
+    newArr.push(input.splice(Math.floor(Math.random()* input.length),1)[0]) 
+  }
   return newArr
 }
 
