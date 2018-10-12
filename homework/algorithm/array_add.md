@@ -116,6 +116,47 @@ bingo([
 예:
 
 ```js
+function omok(arr){
+ //가로줄 확인
+ for (let i = 0; i < 9; i++){
+   let currentPlayer;
+   let count;
+   for (let j = 0; j < 9; j++){
+     if (currentPlayer !== arr[i][j]){
+        currentPlayer = arr[i][j]
+        count = 1 
+     }else{
+       count++
+     }
+     // 만약 1,2 가 5번 연속으로 되어있으면
+    //  if((currentPlayer === 1 && count===5) || 
+    //     (currentPlayer ===2 && count ===5))
+             if((currentPlayer === 1 || 
+        currentPlayer ===2)&& count===5)
+        {
+
+       return currentPlayer
+     }
+   }
+ }
+}
+
+
+
+
+
+
+omok([
+  [0, 2, 2, 2, 2, 2, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0, 0, 2, 0, 0],
+  [0, 0, 0, 1, 0, 0, 2, 0, 0],
+  [0, 0, 0, 0, 1, 0, 2, 0, 0],
+  [0, 0, 0, 0, 0, 1, 2, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+]) // -> 0
 omok([
   [0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0],
