@@ -29,3 +29,57 @@ const names = cart.map(x => x.name)
 const prices = cart.map(x => x.price)
 const discountPrices = cart.map(x => x.price * 0.8)
 ```
+
+## JS coding quiz (DOM API)
+
+```js
+// 꼭 **저장** 하시고 제출해주세요!!!
+
+// 조건:
+//   키보드 상하좌우 방향키를 눌렀을 때, 검은색 칸은 방향키의 방향대로 움직여야 합니다.
+//   (예를 들어, 오른쪽 키를 눌렀다면 오른쪽으로 움직여야 함)
+
+// 배점:
+//   1. 키보드 방향키를 눌렀을 때 자연스럽게 잘 움직일 경우: 20점
+//   2. 검은색 칸이 게임판 바깥으로 사라지지 않고 게임판 안에 머무르는 경우: 10점
+
+const boardEl = document.querySelector('.board')
+
+let x = 0; y = 0;
+// let box = document.querySelector('cursor')
+// 사용자 입력 시 상태 변경 후 화면 그리기
+
+document.addEventListener('keydown', e => {
+  // console.log(e.key)
+  // e.key 가 각각의 위치를  입력 받았을때 증가 혹은 감소 됨 단 음수값, 9보다 커서는 안됨
+  if( e.key === "ArrowRight" && x < 9 ){
+   x++
+  }else if(e.key === "ArrowDown" && y < 9){
+    y++
+  }else if(e.key=== "ArrowLeft" && x > 0){
+    x--
+  }else if(y > 0){
+    y--
+  }    
+  drawBoard()
+})
+
+
+// 상태로부터 화면 그리기
+function drawBoard() {
+  boardEl.querySelectorAll('.row').forEach((rowEl, rowIndex) => {
+    rowEl.querySelectorAll('.col').forEach((colEl, colIndex) => {
+      // rowIndex 값이 y colIndex 값이 x 와 같을때 검정색을 그려줌
+      
+        if (rowIndex === y && colIndex === x){
+          colEl.classList.add('cursor')
+          // 아닌경우 검정색을 지움
+        }else {
+    colEl.classList.remove('cursor')
+        }
+    })
+  })
+}
+
+
+```
