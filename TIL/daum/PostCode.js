@@ -10,6 +10,7 @@ class Postcode extends React.Component {
       if (data.bname !== "") {
         extraAddress += data.bname;
       }
+
       if (data.buildingName !== "") {
         extraAddress +=
           extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
@@ -24,3 +25,5 @@ class Postcode extends React.Component {
     return <DaumPostcode onComplete={this.handleAddress} {...props} />;
   }
 }
+
+// a
