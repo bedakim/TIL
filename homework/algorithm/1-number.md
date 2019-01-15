@@ -3,34 +3,34 @@
 두 수를 입력받아 큰 수를 반환하는 함수를 작성하세요.
 
 ```js
-function larger (x, y){
-  const  a = x
-  const  b = y
+function larger(x, y) {
+  const a = x;
+  const b = y;
   let c;
 
-  if (a>b) {
-    c = a
-  }
-  else{
-    c=b
+  if (a > b) {
+    c = a;
+  } else {
+    c = b;
   }
 
-   return c;
+  return c;
 }
 ```
+
 ```js
-function larger (x, y){
+function larger(x, y) {
   let c;
 
   if (x > y) {
-    c = a
+    c = a;
+  } else {
+    c = b;
   }
-  else{
-    c=b
-  }
-   return c;
+  return c;
 }
 ```
+
 ```js
 function larger (x, y){
   if (x > y) {
@@ -50,34 +50,34 @@ function larger (x, y){
 에러를 발생시키는 코드는 다음과 같습니다.
 
 ```js
-throw new Error('입력값이 잘못되었습니다.');
+throw new Error("입력값이 잘못되었습니다.");
 ```
 
 ```js
-function isPositive(x, y ,z){
-  if(x * y * z > 0){
-    return true;  
+function isPositive(x, y, z) {
+  if (x * y * z > 0) {
+    return true;
+  } else if (x * y * z <= 0) {
+    return false;
+  } else {
+    throw new Error("입력값이 잘못되었습니다.");
   }
-   else if(x * y * z <=0){
-     return false;
-   }
-   else {
-     throw new Error('입력값이 잘못되었습니다.');
-   }
 }
-console.log(isPositive(2, 5, 6))
-console.log(isPositive(2, 5, -6))
-console.log(isPositive(2, 5, 'z'))
+console.log(isPositive(2, 5, 6));
+console.log(isPositive(2, 5, -6));
+console.log(isPositive(2, 5, "z"));
 ```
 
 ### 문제 3
 
 세 수 `min`, `max`, `input`을 입력받아, 다음과 같이 동작하는 함수를 작성하세요.
+
 - `min`보다 `input`이 작으면, `min`을 반환합니다.
 - `max`보다 `input`이 크면, `max`를 반환합니다.
 - 아니면 `input`을 반환합니다.
 
 예:
+
 ```
 limit(3, 7, 5); -> 5
 limit(3, 7, 11); -> 7
@@ -86,21 +86,17 @@ limit(3, 7, 0); -> 3
 ```
 
 ```js
-
-function limit(min, max, input){
-if(min > input){
-  return min;
-}
-else if(max < input){
-  return max;
-}
-else{
-  return input;
-}
+function limit(min, max, input) {
+  if (min > input) {
+    return min;
+  } else if (max < input) {
+    return max;
+  } else {
+    return input;
+  }
 }
 
-
-console.log(limit(5, 6, 10))
+console.log(limit(5, 6, 10));
 ```
 
 ### 문제 4
@@ -108,69 +104,75 @@ console.log(limit(5, 6, 10))
 어떤 정수가 짝수인지 홀수인지 출력하는 함수를 작성하세요. 이를 이용해서, 1부터 20까지의 수가 각각 짝수인지 홀수인지 출력하는 프로그램을 작성하세요.
 
 ```js
-function evenOrOdd(x){
-  if(x % 2 === 0 ){
-    console.log( x + ' : 짝수')
-  }
-  else {
-     console.log(`${x}: 홀수`)
+function evenOrOdd(x) {
+  if (x % 2 === 0) {
+    console.log(x + " : 짝수");
+  } else {
+    console.log(`${x}: 홀수`);
   }
 }
 
-for (let i = 0; i < 20; i++){
-  evenOrOdd(i + 1)
+for (let i = 0; i <= 20; i++) {
+  evenOrOdd(i + 1);
 }
 ```
+
+````js
+function odd (num){
+  return ( (num % 2) === 0 )? console.log(num + "even") : console.log(num +
+  "odd");
+}
+for( let i = 0; i <20; i++){
+  odd(i + 1)
+}
+```
+
 
 ### 문제 5
 
 100 이하의 자연수 중 3과 5의 공배수를 모두 출력하는 프로그램을 작성하세요.
+
 ```js
-  for (let i = 0; i < 100; i++) {
-      if(i % 3 === 0  && i % 5 ===0){
-        console.log(i);
-      }
+for (let i = 0; i < 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log(i);
   }
-```
-
-
+}
+````
 
 ### 문제 6
 
 자연수를 입력받아, 그 수의 모든 약수를 출력하는 함수를 작성하세요.
 
 ```js
-function print(x){
-  for(let i = 0; i < x; i++){
-    const num = i + 1
-    if( x % num  === 0){
- console.log(`${num}: 약수`)
+function print(x) {
+  for (let i = 0; i < x; i++) {
+    const num = i + 1;
+    if (x % num === 0) {
+      console.log(`${num}: 약수`);
+    } else {
+      console.log(`${num}: 아님`);
     }
-   else{
-     console.log(`${num}: 아님`)
-   }
   }
 }
 print(100);
 ```
-
 
 ### 문제 7
 
 2 이상의 자연수를 입력받아, 그 수가 소수인지 아닌지를 판별하는 함수를 작성하세요.
 
 ```js
-  function print(x){
-    for (let i= 2; i < x; i++){
-      if( x % i === 0){
-        return false
-      }
-      else{
-        return true
-      }
+function print(x) {
+  for (let i = 2; i < x; i++) {
+    if (x % i === 0) {
+      return false;
+    } else {
+      return true;
     }
   }
-  print(5);
+}
+print(5);
 ```
 
 ### 문제 8
@@ -178,37 +180,32 @@ print(100);
 1부터 100까지의 수를 차례대로 출력하되, 자릿수에 3, 6, 9중 하나라도 포함되어 있으면 '짝!'을 대신 출력하는 프로그램을 작성하세요.
 
 ```js
-function print(x){
-  for(let i = 0; i < x; i++){
-    const num = i + 1
-    if(num.toString().includes('3')){
-     console.log(`${num} 짝!`)
+function print(x) {
+  for (let i = 0; i < x; i++) {
+    const num = i + 1;
+    if (num.toString().includes("3")) {
+      console.log(`${num} 짝!`);
+    } else if (num.toString().includes("6")) {
+      console.log(`${num}: 짝! `);
+    } else if (num.toString().includes("9")) {
+      console.log(`${num}: 짝! `);
+    } else {
+      console.log(`${num} `);
     }
-   else if(num.toString().includes('6')){
-     console.log(`${num}: 짝! `)
-   }
-   else if(num.toString().includes('9')){
-     console.log(`${num}: 짝! `)
-   }
-   else{
-     console.log(`${num} `)
-   }
   }
 }
 print(100);
 ```
 
 ```js
-for (let i = 0; i < 100; i++){
-    const num = i + 1
-    const str = num.toString()
-    if (str.includes('3') || str.includes('6') || str.includes('9'))
-    {
-     console.log(`${num} 짝!`)
-    }
-    else{
-     console.log(`${num} `)
-   }
+for (let i = 0; i < 100; i++) {
+  const num = i + 1;
+  const str = num.toString();
+  if (str.includes("3") || str.includes("6") || str.includes("9")) {
+    console.log(`${num} 짝!`);
+  } else {
+    console.log(`${num} `);
+  }
 }
 ```
 
@@ -217,48 +214,46 @@ for (let i = 0; i < 100; i++){
 양의 정수를 입력받아, 다음과 같은 패턴의 출력을 하는 함수를 작성하세요.
 
 ```js
-  function starRepeat(x){
-    const star = " *";
-    for (let i = 1; i <= x; i++){
-      console.log(star.repeat(i));
-    }
+function starRepeat(x) {
+  const star = " *";
+  for (let i = 1; i <= x; i++) {
+    console.log(star.repeat(i));
   }
+}
 
-  starRepeat(5);
+starRepeat(5);
 ///
-   function starRepeat(x){
- 
-    for (let i = 0; i < x; i++){
-      console.log(' *'.repeat(i+1));
-    }
+function starRepeat(x) {
+  for (let i = 0; i < x; i++) {
+    console.log(" *".repeat(i + 1));
   }
+}
 
-  starRepeat(5);
+starRepeat(5);
 ```
 
 ```js
-  
-  function print(height){
-    for ( let i = 0; i < height; i++){
-      let stars = ''
-      for(let j = 0; j < i + 1; j++){
-        stars += ' *'
-        
-      }
-      console.log(stars)
+function print(height) {
+  for (let i = 0; i < height; i++) {
+    let stars = "";
+    for (let j = 0; j < i + 1; j++) {
+      stars += " *";
     }
+    console.log(stars);
   }
+}
 
-  print(3)
-
+print(3);
 ```
 
 1을 입력받은 경우:
+
 ```
 *
 ```
 
 3을 입력받은 경우:
+
 ```
 *
 * *
@@ -266,6 +261,7 @@ for (let i = 0; i < 100; i++){
 ```
 
 5를 입력받은 경우:
+
 ```
 *
 * *
@@ -279,34 +275,33 @@ for (let i = 0; i < 100; i++){
 양의 정수를 입력받아, 다음과 같은 패턴의 출력을 하는 함수를 작성하세요.
 
 ```js
-  function diamond(x){
+function diamond(x) {
   let blank = " ";
   let star = " *";
-  for (let i = 1; i < 2*x; i++){
-    if(i <= x){
-      console.log(blank.repeat(x - i)+ star.repeat(i));
+  for (let i = 1; i < 2 * x; i++) {
+    if (i <= x) {
+      console.log(blank.repeat(x - i) + star.repeat(i));
+    } else {
+      console.log(blank.repeat(i - x) + star.repeat(2 * x - i));
     }
-    else{
-      console.log(blank.repeat(i - x) + star.repeat(2*x - i));
-    } 
   }
 }
-diamond(10)
+diamond(10);
 ```
 
 ```js
-  function diamond(x) {
-  for (let i = 0; i < x; i++){
+function diamond(x) {
+  for (let i = 0; i < x; i++) {
     const n = i + 1;
-    ' '.repeat(x - n) + '* '.repeat(n)
-    const line = ' '.repeat(x - n) + '* '.repeat(n)
-    console.log(line)
-  } // 루프 반대로 돌기 
-  for (let i = x -2 ; i >= 0; i--){
+    " ".repeat(x - n) + "* ".repeat(n);
+    const line = " ".repeat(x - n) + "* ".repeat(n);
+    console.log(line);
+  } // 루프 반대로 돌기
+  for (let i = x - 2; i >= 0; i--) {
     const n = i + 1;
-    ' '.repeat(x - n) + '* '.repeat(n)
-    const line = ' '.repeat(x - n) + '* '.repeat(n)
-    console.log(line)
+    " ".repeat(x - n) + "* ".repeat(n);
+    const line = " ".repeat(x - n) + "* ".repeat(n);
+    console.log(line);
   }
 }
 
@@ -314,11 +309,13 @@ diamond(5);
 ```
 
 1를 입력받은 경우:
+
 ```
 *
 ```
 
 3를 입력받은 경우:
+
 ```
   *
  * *
@@ -328,6 +325,7 @@ diamond(5);
 ```
 
 5를 입력받은 경우:
+
 ```
     *
    * *
