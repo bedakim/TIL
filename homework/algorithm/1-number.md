@@ -117,16 +117,14 @@ for (let i = 0; i <= 20; i++) {
 }
 ```
 
-````js
-function odd (num){
-  return ( (num % 2) === 0 )? console.log(num + "even") : console.log(num +
-  "odd");
+```js
+function odd(num) {
+  return num % 2 === 0 ? console.log(num + "even") : console.log(num + "odd");
 }
-for( let i = 0; i <20; i++){
-  odd(i + 1)
+for (let i = 0; i < 20; i++) {
+  odd(i + 1);
 }
 ```
-
 
 ### 문제 5
 
@@ -138,7 +136,7 @@ for (let i = 0; i < 100; i++) {
     console.log(i);
   }
 }
-````
+```
 
 ### 문제 6
 
