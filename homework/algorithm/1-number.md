@@ -188,7 +188,7 @@ function print(x) {
     } else if (num.toString().includes("9")) {
       console.log(`${num}: 짝! `);
     } else {
-      console.log(`${num} `);
+      console.log(`${num} 1`);
     }
   }
 }
@@ -343,6 +343,25 @@ diamond(5);
 ### 문제 12
 
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
+
+```js
+function sort(x, y, z) {
+  // 셋 중에 제일 큰 놈을 따로 빼기
+  let larger = x > y ? x : y;
+  let smaller1 = x > y ? y : x;
+  let max = larger > z ? larger : z;
+  let smaller2 = larger > z ? z : larger;
+  console.log(max);
+  if (smaller1 > smaller2) {
+    console.log(smaller1);
+    console.log(smaller2);
+  } else {
+    console.log(smaller2);
+    console.log(smaller1);
+  }
+}
+sort(100, 2, 101);
+```
 
 ### 문제 13
 
