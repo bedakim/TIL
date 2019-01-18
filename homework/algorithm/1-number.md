@@ -360,7 +360,8 @@ function sort(x, y, z) {
     console.log(smaller1);
   }
 }
-sort(100, 2, 101);
+
+sort(100, 2, 10);
 ```
 
 ### 문제 13
