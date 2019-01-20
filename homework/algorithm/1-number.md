@@ -367,3 +367,19 @@ sort(100, 2, 10);
 ### 문제 13
 
 자연수 `n`을 입력받아, `n`번째 피보나치 수를 반환하는 함수를 작성하세요.
+
+```js
+function fibo(n) {
+  let x = 0;
+  let y = 1;
+  for (let i = 0; i < n; i++) {
+    const sum = x + y;
+    let arr = [];
+    x = y;
+    y = sum;
+    console.log(x);
+    //[x, y] = [y, x];
+  }
+}
+fibo(10);
+```
