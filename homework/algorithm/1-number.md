@@ -340,6 +340,16 @@ diamond(5);
 
 두 수를 입력받아서, 두 수의 최대공약수를 반환하는 함수를 작성하세요. ([유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95)을 참고하세요.)
 
+```js
+const gcdlcm = (a, b) => {
+  let gcd = 1;
+  for (let i = 1; i <= Math.min(a, b); i++) {
+    if (!(a % i) && !(b % i)) gcd = i;
+  }
+  return [gcd, (a * b) / gcd];
+};
+```
+
 ### 문제 12
 
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
