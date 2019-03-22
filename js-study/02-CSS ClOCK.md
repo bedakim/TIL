@@ -2,30 +2,31 @@
 
 ### 시분초
 
-```js
+```html
 <div class="clock">
   <div class="clock-face">
-    <div class="hand hour-hand" />
-    <div class="hand min-hand" />
-    <div class="hand second-hand" />
+    <div class="hand hour-hand"></div>
+    <div class="hand min-hand"></div>
+    <div class="hand second-hand"></div>
   </div>
 </div>
 ```
 
 ### Style
 
-```js
-.hand{
-      width: 50%;
-      height: 6px;
-      background: black;
-      position: absolute;
-      top: 50%;
-      transform-origin: 100%; // 원점 위치 축
-      transform: rotate(90deg); //기우는 방향설정
-      transition: all 0.05s;
-      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); // 애니메이션 (강도조절)
-    }
+```css
+.hand {
+  width: 50%;
+  height: 6px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%; // 원점 위치 축
+  transform: rotate(90deg); //기우는 방향설정
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  // 애니메이션 (강도조절)
+}
 ```
 
 ### JS
