@@ -2,6 +2,9 @@
 
 ## JavaScript에서의 Object
 
+     자바스크립트는 객체기반의 스크립트 언어이며 자바스크립트를 이루고 있는 모든것들이 객체로 존재한다.
+     객체란! 이름-값 쌍으로 저장되는 원시 데이터(때때로 참조 데이터 타입)의 순서 없는 목록이다.
+
 1.  Built-in Object
 2.  Native Object
 3.  Host Object
