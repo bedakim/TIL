@@ -1,4 +1,4 @@
-###
+### Object
 
 - typeof
 - Array.isArray() => [] 인지 아닌지
