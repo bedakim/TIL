@@ -13,6 +13,9 @@ fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data));
 
+//검색어 와 일치하는 도시 or 주 뽑기
+// new RegExp 정규표현식
+// "gi" 대소문자 구분없이
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     const regex = new RegExp(wordToMatch, "gi");
@@ -20,10 +23,12 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
+// 인구수에 , 찍어주기
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+//일치한 값을 화면에 보여주기
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   const html = matchArray
