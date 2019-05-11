@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+      <li>e</li>
+    </ul>
+
+    <p>선택된 li:<span class="sp"></span></p>
+
+    <script>
+      function getTag(e) {
+        const Text = e.path[0].innerText;
+        // console.dir(e.path[0].innerText);
+        // const name = document.querySelector("e");
+        console.log(Text);
+      }
+     classList
+      const list = document.querySelector("ul");
+      list.addEventListener("click", getTag);
+    </script>
+  </body>
+</html>

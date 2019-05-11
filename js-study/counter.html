@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/js-study/counter.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="counter">
+      <h1 class="number"></h1>
+      <ul class="btns">
+        <li><input class="input" /></li>
+        <li><button class="plus">+</button></li>
+        <li><button class="minus">-</button></li>
+        <li><button class="reset">Reset</button></li>
+      </ul>
+    </div>
+    <script>
+      class Counter {
+        constructor(input = 0) {
+          this.count = typeof input === "number" ? (this.count = input) : 0;
+        }
+        getCount() {
+          return this.count;
+        }
+        increment(inputNum = 1) {
+          const isWrong = typeof inputNum !== "number";
+          return isWrong ? "숫자만 넣어주세요" : (this.count += inputNum);
+        }
+        decrement(inputNum = 1) {
+          const isWrong = typeof inputNum !== "number";
+          return isWrong ? "숫자만 넣어주세요" : (this.count -= inputNum);
+        }
+        reset(inputNum = 0) {
+          console.log("reset");
+          return (this.count = inputNum);
+        }
+      }
+
+      const counter = new Counter();
+      const plusEl = document.querySelector(".plus");
+      const minusEl = document.querySelector(".minus");
+      const resetEl = document.querySelector(".reset");
+      const numEl = document.querySelector(".number");
+
+      let Num = (document.querySelector(
+        ".number"
+      ).innerText = counter.getCount());
+
+      plusEl.addEventListener("click", function() {
+        const inputNum = Number(document.querySelector(".input").value);
+        if (isNaN(inputNum)) {
+          numEl.innerText = "숫자만 넣어주세요";
+        } else {
+          if (!inputNum) {
+            let inputNum = 1;
+            counter.increment(inputNum);
+            counter.getCount();
+            console.log(Number(inputNum));
+            console.dir(document.querySelector(".number"));
+            numEl.innerText = counter.getCount();
+          }
+        }
+      });
+      minusEl.addEventListener("click", function() {
+        const inputNum = Number(document.querySelector(".input").value);
+        if (isNaN(inputNum)) {
+          numEl.innerText = "숫자만 넣어주세요";
+        } else {
+          counter.decrement(inputNum);
+          counter.getCount();
+          // console.log(counter.getCount());
+          numEl.innerText = counter.getCount();
+        }
+      });
+      resetEl.addEventListener("click", function() {
+        const inputNum = Number(document.querySelector(".input").value);
+        if (isNaN(inputNum)) {
+          numEl.innerText = "숫자만 넣어주세요";
+        } else {
+          counter.reset(inputNum);
+          counter.getCount();
+          // console.log(counter.getCount());
+          numEl.innerText = counter.getCount();
+        }
+      });
+    </script>
+  </body>
+</html>

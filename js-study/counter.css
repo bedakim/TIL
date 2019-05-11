@@ -1,0 +1,30 @@
+body {
+  background-color: teal;
+}
+h1 {
+  margin: 100px 150px;
+  text-align: center;
+  padding-top: 70px;
+  font-size: 3rem;
+  color: tomato;
+  border: 2px solid #dadcda;
+  width: 500px;
+  height: 150px;
+}
+ul {
+  list-style: none;
+  margin-left: 100px;
+}
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+button {
+  border-style: unset;
+  width: 80px;
+  height: 50px;
+  font-size: 1.1rem;
+  background-color: antiquewhite;
+  color: darkgreen;
+  font-weight: bold;
+}
